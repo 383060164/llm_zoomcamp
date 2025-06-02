@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "llm_zoomcamp_damon"
+version = "0.1.0"
+description = "This repository contains my learning notebooks, homework assignments, and final personal project for the LLM Zoomcamp course by Alexey."
+authors = ["Tianyang Gao"]
+readme = "README.md"
+packages = [{include = "llm_zoomcamp_damon", from ="src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.10, <4.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+
+[tool.poetry.group.test.dependencies]
+pytest-cov = "^4.0"
+pytest-mock = "^3.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+# Enable these rule sets
+select = [
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "I",   # isort
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "C",   # mccabe complexity
+    "W",   # pycodestyle warnings
+]
+line-length = 100
+
+# Preserve single quotes instead of converting to double quotes
+quote-style = "single"
+
+# Target Python 3.7+ (adjust based on your needs)
+target-version = "py37"
+
+[tool.ruff.format]
+# Configure format settings to match your black configuration
+line-length = 100
+quote-style = "single"
+
+[tool.ruff.isort]
+# Configure isort settings
+force-single-line = false
+lines-after-imports = 2
